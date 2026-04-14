@@ -6,6 +6,7 @@ import { useTrip, useUpdateTrip, useDeleteTrip } from '@/features/trips/tripsQue
 import { PageHeader } from '@/components/common/PageHeader'
 import { TripForm } from '@/components/trips/TripForm'
 import { TravelersList } from '@/components/travelers/TravelersList'
+import { FlightsList } from '@/components/flights/FlightsList'
 import { Button } from '@/components/ui/button'
 import type { TripFormValues } from '@/features/trips/tripsTypes'
 
@@ -149,8 +150,10 @@ export default function TripDetailPage() {
 
           <TravelersList tripId={trip.id} />
 
+          <FlightsList tripId={trip.id} defaultCurrency={trip.currency} />
+
           <div className="border border-dashed border-border rounded-xl p-8 text-center text-muted text-sm">
-            Flights, accommodation and itinerary coming soon.
+            Accommodation and itinerary coming soon.
           </div>
         </div>
       )}
