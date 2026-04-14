@@ -8,6 +8,7 @@ import { TripForm } from '@/components/trips/TripForm'
 import { TravelersList } from '@/components/travelers/TravelersList'
 import { FlightsList } from '@/components/flights/FlightsList'
 import { AccommodationList } from '@/components/accommodation/AccommodationList'
+import { BudgetDashboard } from '@/components/budget/BudgetDashboard'
 import { Button } from '@/components/ui/button'
 import type { TripFormValues } from '@/features/trips/tripsTypes'
 
@@ -154,6 +155,8 @@ export default function TripDetailPage() {
           <FlightsList tripId={trip.id} defaultCurrency={trip.currency} />
 
           <AccommodationList tripId={trip.id} defaultCurrency={trip.currency} />
+
+          <BudgetDashboard tripId={trip.id} defaultCurrency={trip.currency} />
 
           <div className="border border-dashed border-border rounded-xl p-8 text-center text-muted text-sm">
             Itinerary coming soon.
