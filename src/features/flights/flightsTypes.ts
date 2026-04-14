@@ -24,7 +24,7 @@ export const flightSchema = z.object({
   arrival_at: z.string().min(1, 'Required'),
   airline: z.string().min(1, 'Required'),
   flight_number: z.string().min(1, 'Required'),
-  price: z.coerce.number().min(0, 'Must be ≥ 0'),
+  price: z.number().min(0, 'Must be ≥ 0'),
   currency: z.string().min(1, 'Required'),
   is_return: z.boolean(),
   traveler_id: z.union([z.literal(''), z.string()]).optional(),

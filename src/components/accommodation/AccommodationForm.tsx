@@ -95,7 +95,7 @@ export function AccommodationForm({
       <div className="grid grid-cols-[2fr_1fr] gap-3">
         <Field label="Price per night" required error={errors.price_per_night?.message}>
           <input
-            {...register('price_per_night')}
+            {...register('price_per_night', { valueAsNumber: true })}
             type="number"
             min="0"
             step="0.01"

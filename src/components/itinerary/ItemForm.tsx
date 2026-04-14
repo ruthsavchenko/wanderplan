@@ -104,7 +104,7 @@ export function ItemForm({
       {/* Cost */}
       <Field label="Cost" error={errors.cost?.message}>
         <input
-          {...register('cost')}
+          {...register('cost', { valueAsNumber: true })}
           type="number"
           min="0"
           step="0.01"

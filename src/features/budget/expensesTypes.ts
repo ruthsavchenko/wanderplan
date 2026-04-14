@@ -62,7 +62,7 @@ export type ExpenseCreate = {
 export const expenseSchema = z.object({
   category: z.enum(EXPENSE_CATEGORIES),
   description: z.string().min(1, 'Required'),
-  amount: z.coerce.number().min(0, 'Must be ≥ 0'),
+  amount: z.number().min(0, 'Must be ≥ 0'),
   currency: z.string().min(1, 'Required'),
   paid_by: z.union([z.literal(''), z.string()]).optional(),
   date: z.string().min(1, 'Required'),

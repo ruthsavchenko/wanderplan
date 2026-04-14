@@ -98,7 +98,7 @@ export function ExpenseForm({
       <div className="grid grid-cols-[2fr_1fr] gap-3">
         <Field label="Amount" required error={errors.amount?.message}>
           <input
-            {...register('amount')}
+            {...register('amount', { valueAsNumber: true })}
             type="number"
             min="0"
             step="0.01"

@@ -122,7 +122,7 @@ export function FlightForm({
       <div className="grid grid-cols-[2fr_1fr] gap-3">
         <Field label="Price" required error={errors.price?.message}>
           <input
-            {...register('price')}
+            {...register('price', { valueAsNumber: true })}
             type="number"
             min="0"
             step="0.01"

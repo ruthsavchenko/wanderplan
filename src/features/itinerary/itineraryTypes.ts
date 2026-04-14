@@ -52,10 +52,7 @@ export const itemSchema = z.object({
   time: z.string().optional(),
   description: z.string().optional(),
   location: z.string().optional(),
-  cost: z.preprocess(
-    (v) => (v === '' || v === null || v === undefined ? null : Number(v)),
-    z.number().min(0).nullable().optional()
-  ),
+  cost: z.nan().transform(() => undefined).or(z.number().min(0)).optional(),
 })
 
 export type ItemFormValues = z.infer<typeof itemSchema>
