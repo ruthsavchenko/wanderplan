@@ -22,9 +22,11 @@ export const tripsService = {
   },
 
   async create(trip: TripCreate): Promise<Trip> {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) throw new Error('Not authenticated')
     const { data, error } = await supabase
       .from('trips')
-      .insert(trip)
+      .insert({ ...trip, user_id: user.id })
       .select()
       .single()
     if (error) throw error
