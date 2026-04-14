@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 37% 19%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 37% 19%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 37% 19%;
+    --primary: 222 47% 19%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 40 75% 56%;
+    --secondary-foreground: 222 47% 19%;
+    --muted: 45 10% 52%;
+    --muted-foreground: 45 10% 52%;
+    --accent: 40 75% 56%;
+    --accent-foreground: 222 47% 19%;
+    --destructive: 5 78% 59%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 14% 87%;
+    --input: 40 14% 87%;
+    --ring: 222 47% 19%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-bg text-navy font-sans;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
