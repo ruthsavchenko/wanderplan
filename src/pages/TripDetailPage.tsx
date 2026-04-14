@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { useTrip, useUpdateTrip, useDeleteTrip } from '@/features/trips/tripsQueries'
 import { PageHeader } from '@/components/common/PageHeader'
 import { TripForm } from '@/components/trips/TripForm'
+import { TravelersList } from '@/components/travelers/TravelersList'
 import { Button } from '@/components/ui/button'
 import type { TripFormValues } from '@/features/trips/tripsTypes'
 
@@ -146,8 +147,10 @@ export default function TripDetailPage() {
             <p className="font-display text-2xl text-navy">{trip.currency}</p>
           </div>
 
+          <TravelersList tripId={trip.id} />
+
           <div className="border border-dashed border-border rounded-xl p-8 text-center text-muted text-sm">
-            Travelers, flights, accommodation and itinerary coming soon.
+            Flights, accommodation and itinerary coming soon.
           </div>
         </div>
       )}
