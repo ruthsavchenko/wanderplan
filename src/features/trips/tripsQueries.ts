@@ -30,6 +30,18 @@ export function useCreateTrip() {
   })
 }
 
+export function useUpdateTrip() {
+  const qc = useQueryClient()
+  return useMutation({
+    mutationFn: ({ id, trip }: { id: string; trip: Partial<TripCreate> }) =>
+      tripsService.update(id, trip),
+    onSuccess: (_, { id }) => {
+      qc.invalidateQueries({ queryKey: tripKeys.all })
+      qc.invalidateQueries({ queryKey: tripKeys.detail(id) })
+    },
+  })
+}
+
 export function useDeleteTrip() {
   const qc = useQueryClient()
   return useMutation({
